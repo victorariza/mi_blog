@@ -19,6 +19,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32"> 
   <h1><b>Talks about Data & Sustainability</b></h1>
+	<button type="button" onclick="document.getElementById('demo').innerHTML = Date()"> 
+		What time is it?</button>
+	<p id="demo"></p>
 </header>
 
 <!-- Grid -->
@@ -26,6 +29,78 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="https://saveatrain-12e85.kxcdn.com/blog/wp-content/uploads/2020/05/carbon-footprint.jpg" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Carbon Footprint Calculator</b></h3>
+      <h5>Estimate you carbon footprint with this simple survey, for the real one go to "read more"<span class="w3-opacity"> June 14, 2022</span></h5>
+    </div>
+
+    <script type="text/javascript">
+	function calculateFootprint(diet, car, house, flight){
+		footprint = 2	
+		if (diet == "yes"){
+			footprint = footprint + 2
+		}
+
+		if (car == "gasoline"){
+			footprint = footprint + 2
+		}
+
+		if (house == "gas"){
+			footprint = footprint + 2
+		}
+
+		if (flight == "yes"){
+			footprint = footprint + 2
+		}
+
+
+		alert("Your footprint is " + footprint + " tons of Co2 equivalent")
+	}
+    </script>
+
+    <div class="w3-container">
+      <form name="carbon_calculator">
+	
+	<div id="diet">
+  		<label for="yes_no_radio">Do you eat a lot of meat?</label>
+		<input type="radio" name="diet" value="yes" checked>Yes</input>
+		<input type="radio" name="diet" value="no">No</input>
+	</div>
+	<div id="car">
+  		<label for="yes_no_radio">Do you have an gasoline or electric car?</label>
+		<input type="radio" name="car" value="gasoline" checked>Gasoline</input>
+		<input type="radio" name="car" value="electric">Electric</input>
+	</div>
+	<div id="house">
+  		<label for="yes_no_radio">Do you have you use gas or electricity for heating?</label>
+		<input type="radio" name="house" value="gas" checked>Gas</input>
+		<input type="radio" name="house" value="electricity">Electricity</input>
+	</div>
+	<div id="flight">
+  		<label for="yes_no_radio">Did you take a flight last year?</label>
+		<input type="radio" name="flight" value="yes" checked>Yes</input>
+		<input type="radio" name="flight" value="no">No</input>
+	</div>
+
+	<input type="button" onclick="calculateFootprint(carbon_calculator.diet.value, carbon_calculator.car.value, carbon_calculator.house.value, carbon_calculator.flight.value)" value="Calculate your footprint">
+      </form>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><a href="https://footprint.wwf.org.uk/#/" > READ MORE »</a></b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
 
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
@@ -48,10 +123,6 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
   </div>
   <hr>
-
-
-
-
 
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
